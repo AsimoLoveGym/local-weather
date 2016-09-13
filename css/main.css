@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3em;
+}
+
+#smaller-container {
+  /*margin-left: 6em;
+  margin-right: 6em;*/
+}
+
+#unit-outer-container {
+  display: table;
+  table-layout: fixed;
+  padding: 1em;
+}
+
+#unit-inner-container {
+  display: table-cell;
+  vartical-align: middle;
+}
+
+#temp-unit {
+  text-align: left;
+}
