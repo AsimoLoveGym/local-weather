@@ -5,15 +5,26 @@ $.getJSON("http://ip-api.com/json",function(data){
   $("#location").html(data.city  + ", " + data.region + ", " + data.countryCode);
   $.getJSON("http://api.openweathermap.org/data/2.5/weather?&APPID=c1487aa92c99ced84fb9d0a49585c31b&q="+locationRequest+"&units=metric",function(weatherData){
     console.log(weatherData);
+    var celsiusTemp = weatherData.main.temp;
+    var celsiusTempMin = weatherData.main.temp_min;
+    var celsiusTempMax = weatherData.main.temp_max;
+
+    var fahrenheitTemp = (celsiusTemp * 9 / 5) + 32;
+    var fahrenheitTempMin = (celsiusTempMin * 9 / 5) + 32;
+    var fahrenheitTempMax = (celsiusTempMax * 9 / 5) + 32;
     $("#weather").html(weatherData.weather[0].main);
-    // console.log(typeof weatherData.main.temp。toFixed(0));
-    $("#temp-avg").html(weatherData.main.temp.toFixed(0));
-    $("#temp-range").html(weatherData.main.temp_min.toFixed(0) + " - " + weatherData.main.temp_max.toFixed(0));
-    // console.log(weatherData.main.temp);
-    // console.log(weatherData.main.temp_max);
-    // console.log(weatherData.main.temp_min);
-    console.log(weatherData);
-    // console.log(weatherData.weather[0].main);
+    $("#temp-avg").html(celsiusTemp.toFixed(0));
+    $("#temp-range").html(celsiusTempMin.toFixed(0) + " - " + celsiusTempMax.toFixed(0));
+
+    $("#temp-f-avg").html(fahrenheitTemp.toFixed(0));
+    $("#temp-f-range").html(fahrenheitTempMin.toFixed(0) + " - " + fahrenheitTempMax.toFixed(0));
+
+    $("#unit-inner-container").click(function(){
+      $("#temp-f-container").toggle();
+      $("#temp-container").toggle();
+      $("#temp-unit").toggle();
+      $("#temp-f-unit").toggle();
+    });
 
     var skycons = new Skycons({"color": "black"});
     var weatherCodeIcon = "";

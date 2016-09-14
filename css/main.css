@@ -31,11 +31,13 @@ main {
   vartical-align: middle;
 }
 
-#temp-unit {
+#temp-unit, #temp-f-unit {
   text-align: left;
 }
 
-
+#temp-f-container, #temp-f-unit {
+  display: none;
+}
 
 @media screen and (max-width: 991px) {
   canvas {
