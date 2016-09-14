@@ -34,3 +34,26 @@ main {
 #temp-unit {
   text-align: left;
 }
+
+
+
+@media screen and (max-width: 991px) {
+  canvas {
+    position: relative;
+    left: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #main-content {
+    position: relative;
+    left: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #main-content {
+    position: relative;
+    left: 150px;
+  }
+}

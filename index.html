@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Random Quote Machine</title>
+  <title>Local Weather APP</title>
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -13,12 +13,13 @@
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/skycons.js"></script>
 </head>
 <body>
   <main class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 text-center" id="main-content">
           <h1 id="location">Champaign, IL</h1>
           <p id="weather">Sunny</p>
 
@@ -33,11 +34,10 @@
               </div>
             </div>
           </div>
-
-
         </div>
-        <div class="col-md-6">
-          <img src="http://placekitten.com/200/300" alt="weather animation" id="weatherIcon" class="img-responsive">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <canvas id="weatherIcon" width="180" height="180">
+          </canvas>
         </div>
       </div>
     </div>
